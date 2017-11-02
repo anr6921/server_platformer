@@ -1,0 +1,15 @@
+{
+  "name": "server_platformer",
+  "version": "1.0.0",
+  "description": "Multiplayer platformer",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Anna Rosenberg",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.15.3",
+    "socket.io": "^2.0.3"
+  }
+}

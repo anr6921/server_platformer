@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.11/p5.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.11/addons/p5.dom.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.11/addons/p5.sound.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.1/socket.io.js"></script>
+    <script src="sketch.js"></script>
+    <!--<script type="text/javascript" src="/socket.io/socket.io.js"></script>
+    <script type="text/javascript" src="/js/engine.js"></script>-->
+  <!--<link rel="stylesheet" type="text/css" href="style.css">
+  <style> body {padding: 0; margin: 0;} </style>-->
+  </head>
+  <body>
+    <!-- create canvas -->
+    <canvas id="canvas" style="border:1px solid #000" width="500px" height="100px"></canvas>
+    
+    <script>
+      //console.log('canvas: ' + canvas.size);
+      //var canv = document.getElementById("defaultCanvas0"),
+      //width : 500;
+      
+      var canvas = document.getElementById("canvas"),
+        ctx = canvas.getContext("2d"),
+        width = 500,
+        height = 100,
+        // player var
+        player = {
+        x : width,
+        y : 0,
+        width : 10,
+        height : 10,
+        speed: 3,
+        velX: 0,
+        velY: 0,
+        jumping: false
+        },
+        keys = [],
+        friction = 0.8,
+        gravity = 0.3;
+        //log player pos
+        console.log('player: '+player.x+' '+player.y);
+
+        //canvas size
+        //canvas.width = width;       
+        //canvas.height = height;
+        console.log('Canvas X Y: '+canvas.width + ' ' +canvas.height);
+        
+        
+        document.body.addEventListener("keydown", function(e) {
+            keys[e.keyCode] = true;
+        });
+
+        document.body.addEventListener("keyup", function(e) {
+            keys[e.keyCode] = false;
+        });
+
+
+        window.addEventListener("load",function(){
+            update();
+        });
+    </script>
+  </body>
+</html>
